@@ -42,9 +42,15 @@ namespace TerminalTactilWPF.Viewmodels
             }
         }
 
+        public void ActualizaFechaHora()
+        {
+            this.Fecha = DateTime.UtcNow.ToString("dd/MM/yyyy");
+            this.Hora = DateTime.UtcNow.ToString("HH:mm:ss");
+        }
+
         public override void Reload()
         {
-
+            this.ActualizaFechaHora();
         }
     }
 }

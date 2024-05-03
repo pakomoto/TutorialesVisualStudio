@@ -4,12 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ViewModels="clr-namespace:TerminalTactilWPF.Viewmodels"
-        xmlns:local="clr-namespace:TerminalTactilWPF.Views"
+        xmlns:interaction="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:TerminalTactilWPF.Views" 
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="FrmVentPrincipal" Height="700" Width="1024">
     <Window.DataContext>
         <ViewModels:VentPrincipalViewModel/>
     </Window.DataContext>
+    <interaction:Interaction.Triggers>
+        <interaction:EventTrigger EventName="Loaded">
+            <interaction:InvokeCommandAction Command="{Binding ReloadCommand}" />
+        </interaction:EventTrigger>
+    </interaction:Interaction.Triggers>
     <Viewbox Stretch="Fill">
         <Grid Height="700" Width="1024">
             <Grid.RowDefinitions>
