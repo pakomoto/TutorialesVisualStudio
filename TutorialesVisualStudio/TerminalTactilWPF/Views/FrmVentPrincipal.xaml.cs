@@ -34,6 +34,8 @@ namespace TerminalTactilWPF.Views
             this.timer.Interval = TimeSpan.FromMilliseconds(500); // Intervalo de 1/2 segundo
             this.timer.Tick += Timer_Tick;
             this.timer.Start();
+
+            this.MuestraVentana(typeof(FrmPaginaPrueba1));
         }
 
         private void Timer_Tick(object? sender, EventArgs e)
@@ -46,6 +48,21 @@ namespace TerminalTactilWPF.Views
 
                 miTimer.Start();
             }
+        }
+
+        public Page? MuestraVentana(Type type)
+        {
+            Page? page = null;
+
+            if (type != null)
+            {
+                page = Activator.CreateInstance(type) as Page;
+
+                if(page != null)
+                    this.frameNavegacion.Navigate(page);
+            }
+
+            return page;
         }
     }
 }

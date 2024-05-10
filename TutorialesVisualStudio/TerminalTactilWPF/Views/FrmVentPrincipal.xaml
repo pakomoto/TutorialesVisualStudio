@@ -28,6 +28,7 @@
                 <Label Content="{Binding Fecha,UpdateSourceTrigger=PropertyChanged}" Canvas.Left="917" Canvas.Top="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Label Content="{Binding Hora, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="929" Canvas.Top="29" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             </Canvas>
+            <Frame x:Name="frameNavegacion" Grid.Row="1" Background="LightGreen"/>
         </Grid>
     </Viewbox>
 </Window>
