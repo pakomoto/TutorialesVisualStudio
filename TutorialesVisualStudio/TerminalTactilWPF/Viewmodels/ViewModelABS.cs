@@ -13,7 +13,7 @@ namespace TerminalTactilWPF.Viewmodels
 {
     public abstract class ViewModelABS : BindableBase, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void Notifica([CallerMemberName] string caller = null)
         {
